@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Used.
+    -->
+    <changeSet id="20190104092833-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="suggestion_id"
+                                 baseTableName="used"
+                                 constraintName="fk_used_suggestion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="suggestion"/>
+
+        <addForeignKeyConstraint baseColumnNames="dress_id"
+                                 baseTableName="used"
+                                 constraintName="fk_used_dress_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dress"/>
+
+    </changeSet>
+</databaseChangeLog>

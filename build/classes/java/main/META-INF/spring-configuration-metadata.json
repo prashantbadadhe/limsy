@@ -1,0 +1,17 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.radixile.limsy.config.ApplicationProperties",
+      "name": "application",
+      "type": "com.radixile.limsy.config.ApplicationProperties"
+    },
+    {
+      "sourceType": "com.radixile.limsy.config.CloudDatabaseConfiguration",
+      "name": "spring.datasource.hikari",
+      "sourceMethod": "dataSource()",
+      "type": "javax.sql.DataSource"
+    }
+  ],
+  "properties": []
+}

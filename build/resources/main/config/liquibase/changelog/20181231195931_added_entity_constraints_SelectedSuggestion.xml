@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity SelectedSuggestion.
+    -->
+    <changeSet id="20181231195931-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="suggestion_id"
+                                 baseTableName="selected_suggestion"
+                                 constraintName="fk_selected_suggestion_suggestion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="suggestion"/>
+
+        <addForeignKeyConstraint baseColumnNames="dress_id"
+                                 baseTableName="selected_suggestion"
+                                 constraintName="fk_selected_suggestion_dress_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dress"/>
+
+    </changeSet>
+</databaseChangeLog>

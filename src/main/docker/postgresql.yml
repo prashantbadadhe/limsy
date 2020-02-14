@@ -1,0 +1,11 @@
+version: '2'
+services:
+    limsy-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/limsy/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=limsy
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

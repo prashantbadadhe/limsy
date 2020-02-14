@@ -1,0 +1,60 @@
+entity Location {
+	area String required,
+	zip String required,
+	city String,
+	state String,
+    country String
+}
+      
+entity UserAdditional {
+    gender String,
+    birthDate LocalDate,
+    phone String,
+    email String
+}
+
+entity Category{
+	name String required
+}
+entity Dress {
+	color String,
+    purchaseDate LocalDate,
+    price Double,
+    inUse Boolean,
+    image ImageBlob
+}
+
+entity Suggestion {
+	date LocalDate required,
+}
+entity Used {
+	selected Boolean,
+    manualSelect Boolean
+}
+relationship OneToOne {
+	Used{suggestion(date)} to Suggestion,
+    Used{dress(image)} to Dress
+}
+relationship OneToOne {
+Dress{category(name)} to Category,
+}
+relationship OneToOne {
+Category{parent(name)} to Category
+}
+relationship OneToOne {
+    UserAdditional{address(area)} to Location
+}
+
+
+
+// Set pagination options
+paginate all with infinite-scroll
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
